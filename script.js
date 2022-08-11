@@ -1,6 +1,13 @@
-
-var city = "london";
+var searchInput = document.querySelector("[data-search]")
 var apiKey =  "52f6964e61a82e1b57d7417070c8b005";
+searchInput.addEventListener("submit", function(e) {
+    e.preventDefault();
+    var value = document.getElementById('search-bar').value
+    console.log(value)
+    console.log(searchInput)
+
+var city = value;
+
  let weather = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=52f6964e61a82e1b57d7417070c8b005";
  let forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&appid=52f6964e61a82e1b57d7417070c8b005";
  fetch(weather).then(function(response){
@@ -26,7 +33,7 @@ var apiKey =  "52f6964e61a82e1b57d7417070c8b005";
    
     }
         else {
-            alert("problem")
+           
         }
  });
  fetch(forecast).then(function(response){
@@ -53,7 +60,7 @@ var apiKey =  "52f6964e61a82e1b57d7417070c8b005";
    
     }
         else {
-            alert("problem")
+    
         }
  });
  fetch(forecast).then(function(response){
@@ -80,7 +87,7 @@ var apiKey =  "52f6964e61a82e1b57d7417070c8b005";
    
     }
         else {
-            alert("problem")
+        
         }
  });
  fetch(forecast).then(function(response){
@@ -107,7 +114,7 @@ var apiKey =  "52f6964e61a82e1b57d7417070c8b005";
    
     }
         else {
-            alert("problem")
+       
         }
  });
  fetch(forecast).then(function(response){
@@ -134,7 +141,7 @@ var apiKey =  "52f6964e61a82e1b57d7417070c8b005";
    
     }
         else {
-            alert("problem")
+      
         }
  });
  fetch(forecast).then(function(response){
@@ -161,6 +168,8 @@ var apiKey =  "52f6964e61a82e1b57d7417070c8b005";
    
     }
         else {
-            alert("problem")
+    
         }
  });
+
+});
