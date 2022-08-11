@@ -5,16 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+   
+ 
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+  />
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="card">
         <h1>Weather Dashboard</h1>
     <form class="search"  data-search  >
         <input type="search" class="search-bar" id="search-bar">
-        <button class="search-button">Search</button>
-    </form>
-
+        <button class="search-button"><i class="fas fa-search-location"></i></button>
+    </form><div>last City:
+<div id="last-city"></div></div>
     <div class="weather">
         <h2 id="location">CITY</h2>
         <h3>Current Weather :</h3>

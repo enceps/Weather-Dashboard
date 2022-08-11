@@ -1,12 +1,36 @@
+
+//ocument.getElementById('last-city').innerText= 
 var searchInput = document.querySelector("[data-search]")
+var lastCity =document.getElementById('last-city').innerHTML = localStorage.getItem(localStorage.length - 1,'value');
 var apiKey =  "52f6964e61a82e1b57d7417070c8b005";
 searchInput.addEventListener("submit", function(e) {
     e.preventDefault();
-    var value = document.getElementById('search-bar').value
-    console.log(value)
+    var valueCity = document.getElementById('search-bar').value
+
+
+
+
+    var i = localStorage.length;
+    localStorage.setItem(i++,valueCity);
+    console.log(localStorage);
+
+
+
+
+    console.log(valueCity)
     console.log(searchInput)
 
-var city = value;
+
+
+
+
+
+
+
+
+
+
+var city = valueCity;
 
  let weather = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=52f6964e61a82e1b57d7417070c8b005";
  let forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&appid=52f6964e61a82e1b57d7417070c8b005";
@@ -24,10 +48,10 @@ var city = value;
          console.log(wind);
          console.log(humidity);
          console.log(temp);
-         document.getElementById('temperature').innerHTML = temp;
+         document.getElementById('temperature').innerHTML = temp + " Celcius";
          document.getElementById('location').innerHTML = city;
-         document.getElementById('humidity').innerHTML = humidity;
-         document.getElementById('wind').innerHTML = wind;
+         document.getElementById('humidity').innerHTML = "Humidity: "+ humidity + " %";
+         document.getElementById('wind').innerHTML = wind + " Km/h";
          document.querySelector(".icon").src = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
         });
    
@@ -50,10 +74,10 @@ var city = value;
           console.log(forecastWind);
           console.log(forecastHumidity);
           console.log(forecastTemp);
-         document.getElementById('forecast-temperature').innerHTML = forecastTemp;
+         document.getElementById('forecast-temperature').innerHTML = forecastTemp + " Celcius";
          document.getElementById('forecast-location').innerHTML = city;
-         document.getElementById('forecast-humidity').innerHTML = forecastHumidity;
-         document.getElementById('forecast-wind').innerHTML = forecastWind;
+         document.getElementById('forecast-humidity').innerHTML = "Humidity: "+ forecastHumidity +" %";
+         document.getElementById('forecast-wind').innerHTML = forecastWind+ " Km/h";
          document.getElementById('date').innerHTML = data.list[3].dt_txt;
          document.querySelector(".forecast-icon").src = "http://openweathermap.org/img/wn/" + data.list[3].weather[0].icon + "@2x.png"
         });
@@ -77,10 +101,10 @@ var city = value;
           console.log(forecastWind);
           console.log(forecastHumidity);
           console.log(forecastTemp);
-         document.getElementById('forecast-temperature-two').innerHTML = forecastTemp;
+         document.getElementById('forecast-temperature-two').innerHTML = forecastTemp + " Celcius";
          document.getElementById('forecast-location-two').innerHTML = city;
-         document.getElementById('forecast-humidity-two').innerHTML = forecastHumidity;
-         document.getElementById('forecast-wind-two').innerHTML = forecastWind;
+         document.getElementById('forecast-humidity-two').innerHTML ="Humidity: "+ forecastHumidity+ " %";
+         document.getElementById('forecast-wind-two').innerHTML = forecastWind+ " Km/h";
          document.getElementById('date-two').innerHTML = data.list[11].dt_txt;
          document.querySelector(".forecast-icon-two").src = "http://openweathermap.org/img/wn/" + data.list[11].weather[0].icon + "@2x.png"
         });
@@ -104,10 +128,10 @@ var city = value;
           console.log(forecastWind);
           console.log(forecastHumidity);
           console.log(forecastTemp);
-         document.getElementById('forecast-temperature-three').innerHTML = forecastTemp;
+         document.getElementById('forecast-temperature-three').innerHTML = forecastTemp + " Celcius";
          document.getElementById('forecast-location-three').innerHTML = city;
-         document.getElementById('forecast-humidity-three').innerHTML = forecastHumidity;
-         document.getElementById('forecast-wind-three').innerHTML = forecastWind;
+         document.getElementById('forecast-humidity-three').innerHTML = "Humidity: "+ forecastHumidity+ " %";
+         document.getElementById('forecast-wind-three').innerHTML = forecastWind+ " Km/h";
          document.getElementById('date-three').innerHTML = data.list[19].dt_txt;
          document.querySelector(".forecast-icon-three").src = "http://openweathermap.org/img/wn/" + data.list[19].weather[0].icon + "@2x.png"
         });
@@ -131,10 +155,10 @@ var city = value;
           console.log(forecastWind);
           console.log(forecastHumidity);
           console.log(forecastTemp);
-         document.getElementById('forecast-temperature-four').innerHTML = forecastTemp;
+         document.getElementById('forecast-temperature-four').innerHTML = forecastTemp + " Celcius";
          document.getElementById('forecast-location-four').innerHTML = city;
-         document.getElementById('forecast-humidity-four').innerHTML = forecastHumidity;
-         document.getElementById('forecast-wind-four').innerHTML = forecastWind;
+         document.getElementById('forecast-humidity-four').innerHTML = "Humidity: "+ forecastHumidity+ " %";
+         document.getElementById('forecast-wind-four').innerHTML = forecastWind+ " Km/h";
          document.getElementById('date-four').innerHTML = data.list[27].dt_txt;
          document.querySelector(".forecast-icon-four").src = "http://openweathermap.org/img/wn/" + data.list[27].weather[0].icon + "@2x.png"
         });
@@ -158,10 +182,10 @@ var city = value;
           console.log(forecastWind);
           console.log(forecastHumidity);
           console.log(forecastTemp);
-         document.getElementById('forecast-temperature-five').innerHTML = forecastTemp;
+         document.getElementById('forecast-temperature-five').innerHTML = forecastTemp + " Celcius";
          document.getElementById('forecast-location-five').innerHTML = city;
-         document.getElementById('forecast-humidity-five').innerHTML = forecastHumidity;
-         document.getElementById('forecast-wind-five').innerHTML = forecastWind;
+         document.getElementById('forecast-humidity-five').innerHTML = "Humidity: "+ forecastHumidity+ " %";
+         document.getElementById('forecast-wind-five').innerHTML = forecastWind+ " Km/h";
          document.getElementById('date-five').innerHTML = data.list[35].dt_txt;
          document.querySelector(".forecast-icon-five").src = "http://openweathermap.org/img/wn/" + data.list[35].weather[0].icon + "@2x.png"
         });
