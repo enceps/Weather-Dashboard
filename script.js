@@ -1,14 +1,27 @@
+// Set local storage and API variables
 
-//ocument.getElementById('last-city').innerText= 
 var searchInput = document.querySelector("[data-search]")
-var lastCity =document.getElementById('last-city').innerHTML = localStorage.getItem(localStorage.length - 1,'value');
+var lastCityOne =document.getElementById('last-city-1').innerHTML =  localStorage.getItem(localStorage.length - 1,'value');
+var lastCityTwo =document.getElementById('last-city-2').innerHTML = localStorage.getItem(localStorage.length - 2,'value');
+var lastCityThree =document.getElementById('last-city-3').innerHTML =  localStorage.getItem(localStorage.length - 3,'value');
+var lastCityFour =document.getElementById('last-city-4').innerHTML =  localStorage.getItem(localStorage.length - 4,'value');
+var lastCityFive =document.getElementById('last-city-5').innerHTML =  localStorage.getItem(localStorage.length - 5,'value');
+var CityCheck = document.querySelector('.city');
 var apiKey =  "52f6964e61a82e1b57d7417070c8b005";
+
+//Click on last City Searched to add to search input
+CityCheck.addEventListener("click", function(e){
+    e.preventDefault();
+    $('#search-bar').attr("value",CityCheck.innerHTML);
+
+})
+//Execute Search
 searchInput.addEventListener("submit", function(e) {
     e.preventDefault();
     var valueCity = document.getElementById('search-bar').value
 
 
-
+//Add City to local storage
 
     var i = localStorage.length;
     localStorage.setItem(i++,valueCity);
@@ -28,7 +41,7 @@ searchInput.addEventListener("submit", function(e) {
 
 
 
-
+//pull current weather from openweather
 
 var city = valueCity;
 
@@ -60,6 +73,8 @@ var city = valueCity;
            
         }
  });
+
+ //pull five day forecast
  fetch(forecast).then(function(response){
     if (response.ok){
         response.json().then(function(data){
